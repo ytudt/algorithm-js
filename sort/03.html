@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>快速排序</title>
+</head>
+<body>
+<script type="text/javascript">
+		/*
+	测试1000000个数需要150ms
+	 */
+	function quicksort(arr,left,right){
+		if(left >= right){
+			return
+		}
+		var i, j, t, temp;
+		i=left;
+		j=right;
+		temp=arr[left];
+
+		while(i!==j){
+			while(arr[j] >= temp && i<j){
+				j--;
+			}
+			while(arr[i] <= temp && i<j){
+				i++;
+			}
+
+			t=arr[i];
+			arr[i]=arr[j];
+			arr[j]=t;
+		}
+
+		arr[left]=arr[i];
+		arr[i]=temp;
+    
+    quicksort(arr,left,i-1);
+    quicksort(arr,i+1,right);
+		return arr;
+	}
+
+	var arr=[];
+	for(var i=0;i<1000000;i++){
+		arr[i]=Math.random()
+	}
+	console.time('start')
+	quicksort(arr,0,arr.length-1)
+	console.timeEnd('start')
+</script>
+	
+</body>
+</html>

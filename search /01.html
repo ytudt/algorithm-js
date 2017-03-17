@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+  var n=3,
+    book=[0,0,0,0],
+    a=[0,0,0,0];
+
+  function dfs(step) {
+    if(step>n){
+      for(let i=1;i<=n;i++){
+        console.log(a[i])
+      }
+      return
+    }
+    for(let i=1;i<=n;i++){
+      if(book[i]==0){
+        a[step]=i;
+        book[i]=1;
+
+        dfs(step+1)
+        book[i]==0
+
+      }
+
+    }
+    return
+
+  }
+  dfs()
+
+</script>
+</body>
+</html>

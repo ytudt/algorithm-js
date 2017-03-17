@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	测试10000个数需要600-700ms
+	 */
+	function sort(arr){
+		var tem=null;
+		for(var i=0;i<arr.length-1;i++){
+			for(var j=0;j<arr.length-i;j++){
+				if(arr[j]>arr[j+1]){
+					tem=arr[j];
+					arr[j]=arr[j+1]
+					arr[j+1]=tem
+
+				}
+
+			}
+		}
+		return arr
+	}
+	var arr=[];
+	for(var i=0;i<10000;i++){
+		arr[i]=Math.random()
+	}
+	console.time('start')
+	sort(arr)
+	console.timeEnd('start')
+
+</script>
+	
+</body>
+</html>

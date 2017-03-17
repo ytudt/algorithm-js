@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	// function fn(arr){
+	// 	var newArr=[];
+	// 	console.log(arr.length>0)
+	// 	while(arr.length>1){
+
+	// 		newArr.push(arr[0]);
+	// 		arr=arr.slice(1);
+	// 		var temp=arr[0]
+	// 		arr=arr.slice(1);
+	// 		arr.push(temp)
+	// 		console.log(arr.length)
+
+	// 	}
+	// 	newArr.push(arr[0])
+	// 	return newArr
+
+	// }
+	// 
+	function fn(arr){
+		var head=0,
+		    tail=arr.length;
+		    while(head<tail){
+		    	head++;
+		    	console.log(tail)
+		    	arr[tail]=arr[head]
+		    	console.log(arr)
+		    	arr.splice(head,1)
+		    	console.log(arr)
+		    	// tail++
+		    	head++;
+		    	// console.log(arr)
+		    }
+		    return arr
+	}
+
+	var arr=[6,3,1,7,5,8,9,2,4];
+	console.log(fn(arr))
+</script>
+	
+</body>
+</html>
